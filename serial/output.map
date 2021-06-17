@@ -1,0 +1,177 @@
+
+Discarded input sections
+
+ .group         0x0000000000000000        0x8 /tmp/ccKfa33F.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+vector_area      0x0000000000000000 0x0000000000000100
+flash            0x0000000000000500 0x000000000003fb00
+ram              0x0000000020000000 0x0000000000008000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccVz0yX1.o
+LOAD /tmp/ccKfa33F.o
+LOAD /tmp/ccifxXqw.o
+START GROUP
+LOAD /usr/local/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v8-m.base/nofp/libgcc.a
+LOAD /usr/local/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.base/nofp/libg.a
+LOAD /usr/local/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.base/nofp/libc.a
+END GROUP
+                0x0000000000000000                . = ORIGIN (vector_area)
+
+.text1          0x0000000000000000       0xc0
+                0x0000000000000000                . = ALIGN (0x4)
+ *(.vectors)
+ .vectors       0x0000000000000000       0xc0 /tmp/ccVz0yX1.o
+                0x0000000000000500                . = ORIGIN (flash)
+
+.text2          0x0000000000000500      0x8d4
+                0x0000000000000500                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000000000500      0x120 /tmp/ccVz0yX1.o
+                0x0000000000000500                init_array()
+                0x0000000000000582                init()
+                0x000000000000061a                Default_Handler()
+ .text          0x0000000000000620      0x20c /tmp/ccKfa33F.o
+                0x0000000000000620                main
+                0x000000000000070a                delay(unsigned long)
+                0x000000000000072a                initSysTick()
+                0x000000000000075a                SysTick_Handler()
+                0x000000000000077c                initClock()
+ .text          0x000000000000082c      0x4b4 /tmp/ccifxXqw.o
+                0x000000000000082c                serial::begin()
+                0x0000000000000928                serial::eputc(char)
+                0x00000000000009ae                serial::egetc()
+                0x00000000000009d0                serial::print(int)
+                0x0000000000000a54                serial::HexDigit(unsigned char)
+                0x0000000000000a98                serial::printHex(unsigned long)
+                0x0000000000000afc                serial::print(char)
+                0x0000000000000b20                serial::print(char const*)
+                0x0000000000000b4e                serial::putBuf(SerialBuffer&, char)
+                0x0000000000000ba0                serial::getBuf(SerialBuffer&)
+                0x0000000000000bf6                serial::available()
+                0x0000000000000c0c                SCI0_RX_Handler()
+                0x0000000000000c64                SCI0_TX_Handler()
+                0x0000000000000ce0                . = ALIGN (0x4)
+                0x0000000000000ce0                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                0x0000000000000ce0                PROVIDE (__preinit_array_end = .)
+                0x0000000000000ce0                . = ALIGN (0x4)
+                0x0000000000000ce0                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+ .init_array    0x0000000000000ce0        0x4 /tmp/ccKfa33F.o
+                0x0000000000000ce4                PROVIDE (__init_array_end = .)
+                0x0000000000000ce4                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+ *(.rodata)
+ .rodata        0x0000000000000ce4       0x13 /tmp/ccKfa33F.o
+ *(.comment)
+ .comment       0x0000000000000cf7       0x4d /tmp/ccVz0yX1.o
+                                         0x4e (size before relaxing)
+ .comment       0x0000000000000d44       0x4e /tmp/ccKfa33F.o
+ .comment       0x0000000000000d44       0x4e /tmp/ccifxXqw.o
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x0000000000000d44       0x30 /tmp/ccVz0yX1.o
+ .ARM.attributes
+                0x0000000000000d74       0x30 /tmp/ccKfa33F.o
+ .ARM.attributes
+                0x0000000000000da4       0x30 /tmp/ccifxXqw.o
+
+.glue_7         0x0000000000000dd4        0x0
+ .glue_7        0x0000000000000dd4        0x0 linker stubs
+
+.glue_7t        0x0000000000000dd4        0x0
+ .glue_7t       0x0000000000000dd4        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000000dd4        0x0
+ .vfp11_veneer  0x0000000000000dd4        0x0 linker stubs
+
+.v4_bx          0x0000000000000dd4        0x0
+ .v4_bx         0x0000000000000dd4        0x0 linker stubs
+
+.iplt           0x0000000000000dd4        0x0
+ .iplt          0x0000000000000dd4        0x0 /tmp/ccVz0yX1.o
+
+.text._ZN6serialC2Ev
+                0x0000000000000dd4       0x12
+ .text._ZN6serialC2Ev
+                0x0000000000000dd4       0x12 /tmp/ccKfa33F.o
+                0x0000000000000dd4                serial::serial()
+                0x0000000000000dd4                serial::serial()
+
+.rel.dyn        0x0000000000000de8        0x0
+ .rel.iplt      0x0000000000000de8        0x0 /tmp/ccVz0yX1.o
+                0x0000000020000000                . = ORIGIN (ram)
+
+.data           0x0000000020000000        0x0 load address 0x0000000000000de6
+                0x0000000000000de6                INIT_DATA_VALUES = LOADADDR (.data)
+                0x0000000020000000                INIT_DATA_START = .
+ *(.data)
+ .data          0x0000000020000000        0x0 /tmp/ccVz0yX1.o
+ .data          0x0000000020000000        0x0 /tmp/ccKfa33F.o
+ .data          0x0000000020000000        0x0 /tmp/ccifxXqw.o
+                0x0000000020000000                INIT_DATA_END = .
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                BSS_START = .
+
+.igot.plt       0x0000000020000000        0x0 load address 0x0000000000000de6
+ .igot.plt      0x0000000020000000        0x0 /tmp/ccVz0yX1.o
+
+.bss            0x0000000020000000      0x11c load address 0x0000000000000de6
+ *(.bss)
+ .bss           0x0000000020000000        0x0 /tmp/ccVz0yX1.o
+ .bss           0x0000000020000000      0x118 /tmp/ccKfa33F.o
+                0x0000000020000000                Serial0
+ .bss           0x0000000020000118        0x4 /tmp/ccifxXqw.o
+                0x000000002000011c                . = ALIGN (0x4)
+                0x000000002000011c                BSS_END = .
+OUTPUT(main.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x0000000000000000      0xef4
+ .debug_info    0x0000000000000000      0x1d1 /tmp/ccVz0yX1.o
+ .debug_info    0x00000000000001d1      0x4e0 /tmp/ccKfa33F.o
+ .debug_info    0x00000000000006b1      0x843 /tmp/ccifxXqw.o
+
+.debug_abbrev   0x0000000000000000      0x525
+ .debug_abbrev  0x0000000000000000       0xea /tmp/ccVz0yX1.o
+ .debug_abbrev  0x00000000000000ea      0x214 /tmp/ccKfa33F.o
+ .debug_abbrev  0x00000000000002fe      0x227 /tmp/ccifxXqw.o
+
+.debug_aranges  0x0000000000000000       0x68
+ .debug_aranges
+                0x0000000000000000       0x20 /tmp/ccVz0yX1.o
+ .debug_aranges
+                0x0000000000000020       0x28 /tmp/ccKfa33F.o
+ .debug_aranges
+                0x0000000000000048       0x20 /tmp/ccifxXqw.o
+
+.debug_line     0x0000000000000000      0x634
+ .debug_line    0x0000000000000000      0x182 /tmp/ccVz0yX1.o
+ .debug_line    0x0000000000000182      0x1cc /tmp/ccKfa33F.o
+ .debug_line    0x000000000000034e      0x2e6 /tmp/ccifxXqw.o
+
+.debug_str      0x0000000000000000      0x630
+ .debug_str     0x0000000000000000      0x221 /tmp/ccVz0yX1.o
+                                        0x25e (size before relaxing)
+ .debug_str     0x0000000000000221      0x2cf /tmp/ccKfa33F.o
+                                        0x48d (size before relaxing)
+ .debug_str     0x00000000000004f0      0x140 /tmp/ccifxXqw.o
+                                        0x483 (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x31c
+ .debug_frame   0x0000000000000000       0x6c /tmp/ccVz0yX1.o
+ .debug_frame   0x000000000000006c      0x100 /tmp/ccKfa33F.o
+ .debug_frame   0x000000000000016c      0x1b0 /tmp/ccifxXqw.o
+
+.debug_ranges   0x0000000000000000       0x18
+ .debug_ranges  0x0000000000000000       0x18 /tmp/ccKfa33F.o

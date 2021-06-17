@@ -1,2 +1,1 @@
-# ra2a1
-Various examples for the RA2A1 microcontroller
+This is a collection of various examples for the Renesas RA2A1 microcontroller.  More details on ioprog.com
